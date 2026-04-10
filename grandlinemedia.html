@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grand Line Media — Elite Web Development</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#04080f;
+  --navy:#071428;
+  --navy2:#0a1d3a;
+  --navy3:#0d2550;
+  --gold:#c8972a;
+  --gold2:#e8b84b;
+  --gold3:#f5d07a;
+  --goldglow:rgba(200,151,42,0.18);
+  --cream:#f0e8d4;
+  --muted:#6b82a0;
+  --border:rgba(200,151,42,0.18);
+}
+
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Syne',sans-serif;
+  font-weight:400;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ─── CURSOR ─── */
+#cur,#cur2{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cur{width:8px;height:8px;background:var(--gold2);transition:width .2s,height .2s,background .2s}
+#cur2{width:36px;height:36px;border:1.5px solid rgba(232,184,75,.5);transition:all .12s linear;mix-blend-mode:screen}
+body.hov #cur{width:20px;height:20px;background:var(--gold3)}
+body.hov #cur2{width:60px;height:60px;opacity:.6}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.8rem 5vw;
+  transition:padding .4s,background .4s,border .4s;
+}
+nav.stuck{
+  padding:1rem 5vw;
+  background:rgba(4,8,15,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  color:var(--gold2);
+  text-decoration:none;
+}
+.logo span{color:rgba(240,232,212,.45);font-weight:400}
+.navlinks{display:flex;gap:2.4rem;list-style:none}
+.navlinks a{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .25s;
+}
+.navlinks a:hover,.navlinks a.cta{color:var(--gold2)}
+.navlinks a.cta{
+  border:1px solid var(--gold);padding:.45rem 1.2rem;
+  transition:background .25s,color .25s;
+}
+.navlinks a.cta:hover{background:var(--gold);color:var(--ink)}
+
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 5vw;position:relative;overflow:hidden;
+}
+.hero-canvas{
+  position:absolute;inset:0;z-index:0;
+}
+.hero-canvas canvas{width:100%;height:100%;display:block}
+
+.hero-tagline{
+  position:relative;z-index:2;
+  font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.6rem;
+  opacity:0;animation:slideup .8s .3s forwards;
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-tagline::before{content:'';width:36px;height:1px;background:var(--gold);display:block}
+
+.hero-h1{
+  position:relative;z-index:2;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3.2rem,7.5vw,8rem);
+  font-weight:900;line-height:.95;
+  max-width:820px;
+  opacity:0;animation:slideup .9s .5s forwards;
+}
+.hero-h1 .stroke{
+  -webkit-text-stroke:1.5px var(--gold2);
+  color:transparent;
+  font-style:italic;
+}
+.hero-h1 .fill{color:var(--cream)}
+
+.hero-sub{
+  position:relative;z-index:2;
+  max-width:460px;margin-top:2rem;
+  font-family:'Crimson Pro',serif;font-size:1.15rem;
+  color:var(--muted);line-height:1.65;
+  opacity:0;animation:slideup .9s .72s forwards;
+}
+
+.hero-ctas{
+  position:relative;z-index:2;
+  display:flex;gap:1.2rem;align-items:center;margin-top:2.8rem;
+  opacity:0;animation:slideup .9s .9s forwards;
+}
+.btn{
+  display:inline-block;text-decoration:none;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:.9rem 2.2rem;transition:all .28s;cursor:none;
+}
+.btn-gold{
+  background:var(--gold);color:var(--ink);font-weight:700;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+}
+.btn-gold:hover{background:var(--gold3);transform:translateY(-2px)}
+.btn-ghost{color:var(--cream);border:1px solid rgba(240,232,212,.25)}
+.btn-ghost:hover{border-color:var(--gold2);color:var(--gold2)}
+
+.hero-scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  opacity:0;animation:fadeIn 1s 1.5s forwards;
+}
+.hero-scroll span{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.scroll-bar{width:1px;height:48px;background:linear-gradient(var(--gold),transparent);animation:pulse 2s 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+@keyframes slideup{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:.8}}
+
+/* ─── MARQUEE ─── */
+.marquee{
+  background:var(--gold);padding:.85rem 0;overflow:hidden;
+}
+.marquee-inner{
+  display:flex;white-space:nowrap;
+  animation:scroll 22s linear infinite;
+}
+.marquee-inner span{
+  font-family:'Syne',sans-serif;font-size:.8rem;
+  font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);padding:0 3rem;
+}
+.marquee-inner span::after{content:'◆';margin-left:3rem;font-size:.5rem}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTIONS ─── */
+.section{padding:10rem 5vw;position:relative}
+.section-label{
+  font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:1rem;
+}
+.section-label::before{content:'';width:28px;height:1px;background:var(--gold);display:block}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,4.5vw,4.2rem);
+  font-weight:700;line-height:1.1;margin-bottom:1.5rem;
+}
+.section-title em{font-style:italic;color:var(--gold2)}
+.section-body{
+  font-family:'Crimson Pro',serif;font-size:1.1rem;
+  color:var(--muted);line-height:1.7;max-width:540px;
+}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.reveal.on{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}
+.reveal.d2{transition-delay:.24s}
+.reveal.d3{transition-delay:.36s}
+.reveal.d4{transition-delay:.48s}
+.reveal.d5{transition-delay:.6s}
+
+/* ─── YEARS STRIP ─── */
+#years{
+  background:var(--navy2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:5rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;gap:3rem;
+  flex-wrap:wrap;
+  position:relative;overflow:hidden;
+}
+#years::before{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,var(--goldglow) 0%,transparent 70%);
+  top:-200px;right:-100px;pointer-events:none;
+}
+.years-left{max-width:500px}
+.years-left p{font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--muted);line-height:1.7;margin-top:1rem}
+.years-stats{display:flex;gap:4rem;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3.5rem,5.5vw,5.5rem);
+  font-weight:900;color:var(--gold2);
+  line-height:1;display:block;
+  background:linear-gradient(135deg,var(--gold),var(--gold3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-label{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+
+/* ─── SERVICES ─── */
+#services{background:var(--ink)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  margin-top:4rem;
+  border:1px solid var(--border);
+}
+.svc{
+  background:var(--ink);padding:3rem 2.2rem;
+  position:relative;overflow:hidden;cursor:none;
+  transition:background .35s;
+}
+.svc::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.svc:hover::after{transform:scaleX(1)}
+.svc:hover{background:rgba(10,29,58,.9)}
+.svc-icon{font-size:2rem;margin-bottom:1.5rem;display:block;opacity:.8}
+.svc-n{
+  font-family:'Playfair Display',serif;font-size:.75rem;
+  color:rgba(200,151,42,.4);letter-spacing:.1em;margin-bottom:.6rem;display:block;
+}
+.svc h3{
+  font-family:'Playfair Display',serif;font-size:1.4rem;
+  font-weight:700;margin-bottom:.9rem;color:var(--cream);
+}
+.svc p{font-family:'Crimson Pro',serif;font-size:.98rem;color:var(--muted);line-height:1.65}
+
+/* ─── PHILOSOPHY ─── */
+#philosophy{
+  background:linear-gradient(160deg,var(--navy2) 0%,var(--navy3) 60%,var(--navy2) 100%);
+  overflow:hidden;
+}
+.philosophy-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;
+}
+.philosophy-visual{
+  position:relative;display:flex;justify-content:center;align-items:center;
+  height:480px;
+}
+.orb-ring{
+  position:absolute;border-radius:50%;border:1px solid;
+  animation:spin linear infinite;
+}
+.orb-ring:nth-child(1){width:300px;height:300px;border-color:rgba(200,151,42,.25);animation-duration:30s}
+.orb-ring:nth-child(2){width:220px;height:220px;border-color:rgba(200,151,42,.18);animation-duration:20s;animation-direction:reverse}
+.orb-ring:nth-child(3){width:140px;height:140px;border-color:rgba(200,151,42,.12);animation-duration:14s}
+.orb-center{
+  width:80px;height:80px;background:radial-gradient(circle,var(--gold) 0%,rgba(200,151,42,.2) 60%,transparent 100%);
+  border-radius:50%;position:relative;z-index:2;
+  animation:breathe 4s ease-in-out infinite;
+}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.15);opacity:1}}
+
+.philosophy-steps{margin-top:2.5rem}
+.pstep{
+  display:flex;gap:1.5rem;padding:1.8rem 0;
+  border-bottom:1px solid rgba(200,151,42,.1);
+  cursor:none;transition:padding-left .3s;
+}
+.pstep:hover{padding-left:.5rem}
+.pstep:last-child{border-bottom:none}
+.pstep-num{
+  font-family:'Playfair Display',serif;font-size:2rem;
+  color:rgba(200,151,42,.2);line-height:1;flex-shrink:0;width:2rem;
+}
+.pstep h4{
+  font-family:'Syne',sans-serif;font-size:.95rem;
+  font-weight:700;letter-spacing:.05em;margin-bottom:.3rem;color:var(--cream);
+}
+.pstep p{font-family:'Crimson Pro',serif;font-size:.92rem;color:var(--muted);line-height:1.55}
+
+/* ─── CAPABILITIES HORIZONTAL ─── */
+#capabilities{
+  background:var(--ink);padding:10rem 0;overflow:hidden;
+}
+#capabilities .inner{padding:0 5vw;margin-bottom:3.5rem}
+.caps-rail{
+  display:flex;gap:1.5rem;padding:0 5vw;
+  transform:translateX(0);transition:transform .08s linear;
+  will-change:transform;width:max-content;
+}
+.cap{
+  width:320px;height:400px;flex-shrink:0;
+  background:var(--navy2);border:1px solid var(--border);
+  padding:2.5rem;display:flex;flex-direction:column;
+  justify-content:flex-end;cursor:none;
+  transition:border-color .3s,transform .3s;position:relative;overflow:hidden;
+}
+.cap:hover{border-color:rgba(200,151,42,.5);transform:translateY(-6px)}
+.cap-bg{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:7rem;opacity:.04;pointer-events:none;
+}
+.cap-idx{
+  position:absolute;top:1.5rem;right:2rem;
+  font-family:'Playfair Display',serif;font-size:3.5rem;
+  color:rgba(200,151,42,.08);font-weight:900;line-height:1;
+}
+.cap-tag{
+  display:inline-block;background:rgba(200,151,42,.1);
+  color:var(--gold);font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;padding:.25rem .7rem;margin-bottom:.9rem;width:fit-content;
+}
+.cap h3{
+  font-family:'Playfair Display',serif;font-size:1.35rem;
+  font-weight:700;color:var(--cream);margin-bottom:.5rem;
+}
+.cap p{font-family:'Crimson Pro',serif;font-size:.9rem;color:var(--muted);line-height:1.55}
+
+/* ─── BIG QUOTE ─── */
+#manifesto{
+  padding:14rem 5vw;
+  background:var(--navy);
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+#manifesto::before{
+  content:'GLM';
+  position:absolute;font-family:'Playfair Display',serif;font-weight:900;
+  font-size:28vw;color:rgba(200,151,42,.03);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  white-space:nowrap;pointer-events:none;letter-spacing:-.02em;
+}
+.manifesto-line{width:1px;height:70px;background:linear-gradient(var(--gold),transparent);margin:0 auto 3rem}
+.manifesto-q{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.8vw,3.6rem);
+  font-weight:400;font-style:italic;
+  line-height:1.3;max-width:900px;margin:0 auto;
+  color:var(--cream);
+}
+.manifesto-q strong{font-style:normal;color:var(--gold2)}
+.manifesto-line-bot{width:1px;height:70px;background:linear-gradient(transparent,var(--gold));margin:3rem auto 0}
+
+/* ─── WHY US ─── */
+#why{background:var(--navy2)}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.why-list{list-style:none}
+.why-item{
+  padding:1.6rem 0;border-bottom:1px solid rgba(200,151,42,.1);
+  display:flex;gap:1.2rem;cursor:none;transition:padding-left .3s;
+}
+.why-item:hover{padding-left:.4rem}
+.why-item:first-child{border-top:1px solid rgba(200,151,42,.1)}
+.why-icon{color:var(--gold);font-size:1rem;flex-shrink:0;margin-top:.15rem}
+.why-item h4{
+  font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;
+  color:var(--cream);margin-bottom:.3rem;
+}
+.why-item p{font-family:'Crimson Pro',serif;font-size:.9rem;color:var(--muted);line-height:1.55}
+.why-card{
+  background:var(--navy3);
+  border:1px solid var(--border);
+  padding:3.5rem;position:relative;
+}
+.why-card::before{
+  content:'\201C';
+  font-family:'Playfair Display',serif;font-size:10rem;
+  color:var(--gold);opacity:.07;
+  position:absolute;top:-1.5rem;left:1.5rem;line-height:1;
+}
+.why-card p{
+  font-family:'Playfair Display',serif;font-size:1.5rem;
+  font-style:italic;font-weight:400;line-height:1.5;color:var(--cream);
+  position:relative;
+}
+.why-card cite{
+  display:block;margin-top:2rem;font-style:normal;
+  font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);
+}
+
+/* ─── CONTACT ─── */
+#contact{
+  background:var(--ink);
+  border-top:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+#contact::before{
+  content:'';position:absolute;
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(13,37,80,.6) 0%,transparent 70%);
+  bottom:-400px;left:-200px;pointer-events:none;
+}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;position:relative}
+.contact-info h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3.5rem);font-weight:700;line-height:1.1;margin-bottom:1.2rem;
+}
+.contact-info h2 em{font-style:italic;color:var(--gold2)}
+.contact-info p{font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--muted);line-height:1.7;margin-bottom:2.5rem}
+.cinfo-items{margin-top:2rem}
+.cinfo-item{
+  display:flex;align-items:center;gap:1rem;
+  padding:.9rem 0;border-bottom:1px solid rgba(200,151,42,.1);
+  text-decoration:none;color:var(--muted);font-size:.9rem;
+  transition:color .25s;cursor:none;
+}
+.cinfo-item:hover{color:var(--gold2)}
+.cinfo-icon{
+  width:34px;height:34px;border:1px solid rgba(200,151,42,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;flex-shrink:0;transition:border-color .25s;
+}
+.cinfo-item:hover .cinfo-icon{border-color:var(--gold)}
+
+/* FORM */
+.cform-wrap{
+  background:rgba(10,29,58,.5);
+  border:1px solid var(--border);padding:3rem;
+  position:relative;
+}
+.cform-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2),transparent);
+}
+.cform-title{
+  font-family:'Playfair Display',serif;font-size:1.4rem;
+  font-weight:700;margin-bottom:2rem;color:var(--cream);
+}
+.fg{margin-bottom:1.3rem}
+.fg label{
+  display:block;font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:rgba(255,255,255,.03);
+  border:1px solid rgba(200,151,42,.18);
+  color:var(--cream);padding:.8rem 1rem;
+  font-family:'Syne',sans-serif;font-size:.85rem;
+  outline:none;transition:border-color .25s,background .25s;
+  cursor:none;border-radius:0;-webkit-appearance:none;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg select option{background:var(--navy2);color:var(--cream)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--gold);background:rgba(200,151,42,.05);
+}
+.fg textarea{height:100px;resize:none}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-btn{
+  width:100%;background:var(--gold);color:var(--ink);
+  border:none;padding:1rem;font-family:'Syne',sans-serif;
+  font-size:.75rem;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;cursor:none;transition:background .25s,transform .2s;
+  margin-top:.3rem;
+}
+.form-btn:hover{background:var(--gold3);transform:translateY(-1px)}
+.form-note{font-size:.68rem;color:var(--muted);text-align:center;margin-top:.8rem}
+.form-success{
+  display:none;text-align:center;padding:3rem 1rem;
+  font-family:'Playfair Display',serif;font-size:1.4rem;
+  font-style:italic;color:var(--gold2);
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--navy);
+  border-top:1px solid var(--border);
+  padding:3rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;font-size:1.1rem;
+  font-weight:700;color:var(--gold2);
+}
+.footer-brand span{color:rgba(240,232,212,.35);font-weight:400}
+.footer-copy{font-size:.7rem;color:var(--muted);text-align:center}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{
+  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .25s;
+}
+.footer-links a:hover{color:var(--gold2)}
+
+/* ─── MOBILE ─── */
+@media(max-width:900px){
+  nav{padding:1rem 4vw}.nav.stuck{padding:.8rem 4vw}
+  .navlinks{display:none}
+  #hero{padding:0 4vw}
+  .section{padding:6rem 4vw}
+  #years{padding:4rem 4vw;flex-direction:column}
+  .years-stats{gap:2rem}
+  .services-grid{grid-template-columns:1fr}
+  .philosophy-layout{grid-template-columns:1fr}
+  .philosophy-visual{display:none}
+  .why-layout{grid-template-columns:1fr;gap:3rem}
+  .contact-layout{grid-template-columns:1fr;gap:3rem}
+  .fg-row{grid-template-columns:1fr}
+  footer{flex-direction:column;align-items:center;text-align:center}
+  .capabilities-inner{padding:0 4vw}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">Grand Line <span>Media</span></a>
+  <ul class="navlinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#philosophy">Process</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-canvas"><canvas id="starCanvas"></canvas></div>
+
+  <div class="hero-tagline reveal">Elite Web Development — Local Business Specialists</div>
+
+  <h1 class="hero-h1 reveal d1">
+    <span class="fill">Websites that</span><br>
+    <span class="stroke">outperform</span><br>
+    <span class="fill">everything.</span>
+  </h1>
+
+  <p class="hero-sub reveal d2">
+    Grand Line Media builds high-performance websites for local businesses that demand to be noticed. No templates. No compromise. Pure craft.
+  </p>
+
+  <div class="hero-ctas reveal d3">
+    <a href="#contact" class="btn btn-gold">Start Your Project</a>
+    <a href="#services" class="btn btn-ghost">Explore Services</a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Discover</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner" aria-hidden="true">
+    <span>Web Design</span><span>Local Business Experts</span><span>Custom Development</span><span>SEO-Ready</span><span>Mobile First</span><span>Conversion Focused</span><span>Grand Line Media</span>
+    <span>Web Design</span><span>Local Business Experts</span><span>Custom Development</span><span>SEO-Ready</span><span>Mobile First</span><span>Conversion Focused</span><span>Grand Line Media</span>
+  </div>
+</div>
+
+<!-- ═══ YEARS / STATS ═══ -->
+<div id="years">
+  <div class="years-left reveal">
+    <div class="section-label">Our Track Record</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,3.5vw,3rem)">Built on a foundation of <em>measurable</em> excellence</h2>
+    <p>Every website we ship is engineered for performance, visibility, and conversion. We don't measure success in aesthetics alone — we measure it in results.</p>
+  </div>
+  <div class="years-stats">
+    <div class="stat reveal d1">
+      <span class="stat-num" id="yearsNum">—</span>
+      <div class="stat-label">Years of<br>Excellence</div>
+    </div>
+    <div class="stat reveal d2">
+      <span class="stat-num">100%</span>
+      <div class="stat-label">Custom<br>Builds</div>
+    </div>
+    <div class="stat reveal d3">
+      <span class="stat-num">∞</span>
+      <div class="stat-label">Commitment<br>to Quality</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
+  <div class="section-label reveal">What We Build</div>
+  <h2 class="section-title reveal d1">Services engineered for<br><em>local dominance</em></h2>
+  <div class="services-grid reveal d2">
+    <div class="svc">
+      <span class="svc-n">01</span>
+      <span class="svc-icon">◈</span>
+      <h3>Custom Web Design</h3>
+      <p>Hand-crafted from concept to launch — built around your brand identity and your customers. Zero templates, zero shortcuts, zero excuses.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-n">02</span>
+      <span class="svc-icon">⬡</span>
+      <h3>Local SEO Architecture</h3>
+      <p>Built to rank. Every page we create is structured for search visibility — technical SEO, schema markup, and Core Web Vitals baked in from line one.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-n">03</span>
+      <span class="svc-icon">◉</span>
+      <h3>Conversion Engineering</h3>
+      <p>Beautiful design without results is art. We architect every page to turn visitors into calls, leads, and customers through proven UX strategy.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-n">04</span>
+      <span class="svc-icon">⬟</span>
+      <h3>Mobile-First Development</h3>
+      <p>Over 70% of local searches are mobile. We build mobile-first — buttery fast, pixel-perfect, optimized for every screen without compromise.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-n">05</span>
+      <span class="svc-icon">◎</span>
+      <h3>Brand Integration</h3>
+      <p>Your brand's voice and visual identity woven into every pixel — cohesive, professional, and unmistakable in a crowded marketplace.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-n">06</span>
+      <span class="svc-icon">◇</span>
+      <h3>Ongoing Partnership</h3>
+      <p>Your website is a living asset. We offer maintenance, updates, and performance monitoring so your site never stops earning for your business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MANIFESTO ═══ -->
+<div id="manifesto">
+  <div class="manifesto-line reveal"></div>
+  <p class="manifesto-q reveal d1">
+    "We don't sell websites.<br>We build your business's<br><strong>most powerful sales tool.</strong>"
+  </p>
+  <div class="manifesto-line-bot reveal d2"></div>
+</div>
+
+<!-- ═══ PHILOSOPHY / PROCESS ═══ -->
+<section id="philosophy" class="section">
+  <div class="philosophy-layout">
+    <div>
+      <div class="section-label reveal">How We Work</div>
+      <h2 class="section-title reveal d1">A <em>disciplined</em><br>craft process</h2>
+      <p class="section-body reveal d2">Every project is a collaboration built on clarity, precision, and accountability — from first call to final launch and beyond.</p>
+      <div class="philosophy-steps">
+        <div class="pstep reveal d1">
+          <div class="pstep-num">01</div>
+          <div>
+            <h4>Discovery & Strategy</h4>
+            <p>We learn your business, market, and goals before touching a design tool. Strategy precedes aesthetics, always.</p>
+          </div>
+        </div>
+        <div class="pstep reveal d2">
+          <div class="pstep-num">02</div>
+          <div>
+            <h4>Design & Review</h4>
+            <p>Custom designs built for your brand. You review and approve at every stage — nothing advances without your sign-off.</p>
+          </div>
+        </div>
+        <div class="pstep reveal d3">
+          <div class="pstep-num">03</div>
+          <div>
+            <h4>Precision Development</h4>
+            <p>Clean, fast, hand-written code. No bloated builders or recycled themes. Just precise engineering for performance.</p>
+          </div>
+        </div>
+        <div class="pstep reveal d4">
+          <div class="pstep-num">04</div>
+          <div>
+            <h4>Launch & Beyond</h4>
+            <p>Thorough testing, smooth go-live, and continued partnership. We don't disappear — we're your long-term digital team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="philosophy-visual reveal d3">
+      <div class="orb-ring"></div>
+      <div class="orb-ring"></div>
+      <div class="orb-ring"></div>
+      <div class="orb-center"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAPABILITIES RAIL ═══ -->
+<section id="capabilities">
+  <div class="inner">
+    <div class="section-label reveal">Our Edge</div>
+    <h2 class="section-title reveal d1">What makes us<br><em>the best in the game</em></h2>
+  </div>
+  <div class="caps-rail" id="capsRail">
+    <div class="cap reveal">
+      <div class="cap-bg">⚡</div>
+      <div class="cap-idx">01</div>
+      <span class="cap-tag">Performance</span>
+      <h3>Sub-2s Load Times</h3>
+      <p>We obsess over every millisecond. Fast sites rank higher, convert more, and lose fewer customers to impatience.</p>
+    </div>
+    <div class="cap reveal d1">
+      <div class="cap-bg">🎯</div>
+      <div class="cap-idx">02</div>
+      <span class="cap-tag">Strategy</span>
+      <h3>Conversion-Led Design</h3>
+      <p>Every layout decision is grounded in behavioral psychology and proven UX — guiding visitors toward action.</p>
+    </div>
+    <div class="cap reveal d2">
+      <div class="cap-bg">🔍</div>
+      <div class="cap-idx">03</div>
+      <span class="cap-tag">Visibility</span>
+      <h3>SEO From the Ground Up</h3>
+      <p>Not retrofitted — search optimization is structural. Built into the architecture so your site earns rankings.</p>
+    </div>
+    <div class="cap reveal d3">
+      <div class="cap-bg">📱</div>
+      <div class="cap-idx">04</div>
+      <span class="cap-tag">Responsive</span>
+      <h3>Flawless on Every Device</h3>
+      <p>Phone, tablet, or desktop — your site looks and performs perfectly without a single pixel out of place.</p>
+    </div>
+    <div class="cap reveal d4">
+      <div class="cap-bg">🛡️</div>
+      <div class="cap-idx">05</div>
+      <span class="cap-tag">Security</span>
+      <h3>Built to Last</h3>
+      <p>SSL, hardened code, and regular updates. Your site is a protected, maintained asset for the long haul.</p>
+    </div>
+    <div class="cap reveal d5">
+      <div class="cap-bg">✦</div>
+      <div class="cap-idx">06</div>
+      <span class="cap-tag">Craft</span>
+      <h3>Zero Templates — Ever</h3>
+      <p>We never reuse themes or drag-and-drop builders. Every engagement starts from scratch and ends with originality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why" class="section">
+  <div class="section-label reveal">Why Grand Line Media</div>
+  <h2 class="section-title reveal d1">The developers <em>other<br>developers</em> learn from</h2>
+  <div class="why-layout">
+    <ul class="why-list">
+      <li class="why-item reveal">
+        <span class="why-icon">◆</span>
+        <div>
+          <h4>No Templates. Never.</h4>
+          <p>Every site we build is original. Created from scratch for your business, your market, and your customers — not copy-pasted from a theme library.</p>
+        </div>
+      </li>
+      <li class="why-item reveal d1">
+        <span class="why-icon">◆</span>
+        <div>
+          <h4>Local Business Obsession</h4>
+          <p>We specialize in local. We know what makes local customers convert and what your neighbors are doing wrong — and we make sure you do it right.</p>
+        </div>
+      </li>
+      <li class="why-item reveal d2">
+        <span class="why-icon">◆</span>
+        <div>
+          <h4>Results Before Aesthetics</h4>
+          <p>Pretty design earns no revenue. We pair striking visuals with conversion-focused architecture so your site does more than impress — it performs.</p>
+        </div>
+      </li>
+      <li class="why-item reveal d3">
+        <span class="why-icon">◆</span>
+        <div>
+          <h4>Direct Developer Access</h4>
+          <p>No account managers. No layers. You talk directly to the person building your site. Fast decisions, faster changes, zero miscommunication.</p>
+        </div>
+      </li>
+      <li class="why-item reveal d4">
+        <span class="why-icon">◆</span>
+        <div>
+          <h4>Transparent, Honest Pricing</h4>
+          <p>We scope every project honestly and stand behind it. No hidden fees, no scope creep surprises — just exactly what we promised.</p>
+        </div>
+      </li>
+    </ul>
+    <div class="why-card reveal d2">
+      <p>The best web developers don't just write good code. They understand your customers well enough to make every design decision count.</p>
+      <cite>— Grand Line Media</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section">
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <h2>Let's build something<br><em>extraordinary.</em></h2>
+      <p>Tell us about your business and your goals. We respond within one business day with straight talk about what we can build and what it will take to get you there.</p>
+      <div class="cinfo-items">
+        <a href="tel:9206212230" class="cinfo-item">
+          <div class="cinfo-icon">✆</div>
+          920-621-2230
+        </a>
+        <a href="mailto:support@grandlinemedia.com" class="cinfo-item">
+          <div class="cinfo-icon">✉</div>
+          support@grandlinemedia.com
+        </a>
+      </div>
+    </div>
+    <div class="cform-wrap reveal d2">
+      <div class="cform-title">Start Your Project</div>
+      <form id="glmForm" action="https://formspree.io/f/mvzvjpda" method="POST">
+        <div class="fg-row">
+          <div class="fg">
+            <label>First Name</label>
+            <input type="text" name="first_name" placeholder="Jane" required>
+          </div>
+          <div class="fg">
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="jane@yourbusiness.com" required>
+        </div>
+        <div class="fg">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(970) 000-0000">
+        </div>
+        <div class="fg">
+          <label>Business Type</label>
+          <select name="business_type">
+            <option value="">Select your industry…</option>
+            <option>Restaurant / Food & Beverage</option>
+            <option>Retail / E-Commerce</option>
+            <option>Health & Wellness</option>
+            <option>Home Services</option>
+            <option>Professional Services</option>
+            <option>Beauty & Personal Care</option>
+            <option>Automotive</option>
+            <option>Real Estate</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Tell Us About Your Project</label>
+          <textarea name="message" placeholder="What are you looking to achieve? Timeline? Budget range?"></textarea>
+        </div>
+        <button type="submit" class="form-btn">Send My Request →</button>
+        <p class="form-note">We respond within 1 business day · No spam, ever.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        ✦ &nbsp; Message received. We'll be in touch shortly. &nbsp; ✦
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Grand Line <span>Media</span></div>
+  <p class="footer-copy">
+    © <span id="footerYear"></span> Grand Line Media. All rights reserved.<br>
+    <span style="font-size:.65rem;opacity:.6">920-621-2230 · support@grandlinemedia.com</span>
+  </p>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#philosophy">Process</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.cssText+=`;left:${mx}px;top:${my}px`});
+(function tick(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(tick)})();
+document.querySelectorAll('a,button,input,select,textarea,.svc,.cap,.pstep,.why-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
+
+/* ── NAV ── */
+const navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>navEl.classList.toggle('stuck',scrollY>80),{passive:true});
+
+/* ── YEARS ── */
+(function(){
+  const founded=2025;
+  const now=new Date();
+  const ms=now-new Date(founded,0,1);
+  const yrs=(ms/(1000*60*60*24*365.25));
+  const el=document.getElementById('yearsNum');
+  const display=yrs<1?'<1':Math.floor(yrs).toString();
+  el.textContent=display;
+  document.getElementById('footerYear').textContent=now.getFullYear();
+})();
+
+/* ── CANVAS STAR FIELD ── */
+(function(){
+  const canvas=document.getElementById('starCanvas');
+  const ctx=canvas.getContext('2d');
+  let W,H,stars=[];
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;initStars()}
+  function initStars(){
+    stars=[];
+    const n=Math.floor((W*H)/5000);
+    for(let i=0;i<n;i++)stars.push({
+      x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.2+.2,
+      a:Math.random(),da:(Math.random()-.5)*.005,
+      vx:(Math.random()-.5)*.08,vy:(Math.random()-.5)*.08
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    stars.forEach(s=>{
+      s.x+=s.vx;s.y+=s.vy;s.a+=s.da;
+      if(s.x<0)s.x=W;if(s.x>W)s.x=0;
+      if(s.y<0)s.y=H;if(s.y>H)s.y=0;
+      if(s.a<.1||s.a>1)s.da*=-1;
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(200,151,42,${s.a*.6})`;ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize);
+  resize();draw();
+})();
+
+/* ── REVEAL ON SCROLL ── */
+const revels=document.querySelectorAll('.reveal');
+const rObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');rObs.unobserve(e.target)}});
+},{threshold:.1});
+revels.forEach(r=>rObs.observe(r));
+
+/* ── CAPABILITIES HORIZONTAL PARALLAX ── */
+(function(){
+  const rail=document.getElementById('capsRail');
+  const sec=document.getElementById('capabilities');
+  function onScroll(){
+    const r=sec.getBoundingClientRect();
+    const wh=window.innerHeight;
+    if(r.top<wh&&r.bottom>0){
+      const prog=(wh-r.top)/(wh+r.height);
+      const maxShift=rail.scrollWidth-sec.offsetWidth;
+      const shift=Math.max(0,Math.min(prog*maxShift*.55,maxShift));
+      rail.style.transform=`translateX(-${shift}px)`;
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
+
+/* ── PARALLAX HERO GLOW ── */
+window.addEventListener('scroll',()=>{
+  const hero=document.getElementById('hero');
+  const pct=scrollY/window.innerHeight;
+  hero.style.setProperty('--scroll',pct);
+  hero.querySelectorAll('.hero-h1,.hero-sub,.hero-ctas').forEach(el=>{
+    el.style.transform=`translateY(${scrollY*.18}px)`;
+    el.style.opacity=1-pct*.8;
+  });
+},{passive:true});
+
+/* ── FORM ── */
+document.getElementById('glmForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=e.target.querySelector('.form-btn');
+  btn.textContent='Sending…';btn.disabled=true;
+  try{
+    const res=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
+    if(res.ok){e.target.style.display='none';document.getElementById('formSuccess').style.display='block'}
+    else{btn.textContent='Error — Try Again';btn.disabled=false}
+  }catch{btn.textContent='Error — Try Again';btn.disabled=false}
+});
+</script>
+</body>
+</html>
